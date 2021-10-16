@@ -1,0 +1,22 @@
+﻿@model CURDLearn1016.Models.MyDataTable
+
+<h2>Delete This</h2>
+@using (Html.BeginForm("Delete", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.Id)
+    <div class="form-group">
+        <label>Name</label>
+        <p>@Model.Name</p>
+    </div>
+    <div class="form-group">
+        <label>Sex</label>
+        <p>@Model.Sex</p>
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        <p>@Model.Age</p>
+    </div>
+    <div>
+        <input type="submit" value="Delete"/>
+    </div>
+}

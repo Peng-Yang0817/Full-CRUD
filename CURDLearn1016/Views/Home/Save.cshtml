@@ -1,0 +1,30 @@
+﻿@model CURDLearn1016.Models.MyDataTable
+
+<h2>Save</h2>
+@using (Html.BeginForm("Save", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Id > 0)
+    {
+        @Html.HiddenFor(a => a.Id)
+    }
+
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Name)
+    </div>
+    <div class="form-group">
+        <label>Sex</label>
+        @Html.TextBoxFor(a => a.Sex, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Sex)
+    </div>
+    <div class="form-group">
+        <label>Age</label>
+        @Html.TextBoxFor(a => a.Age, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Age)
+    </div>
+    <div>
+        <input type="submit" value="Save"/>
+    </div>
+
+}
